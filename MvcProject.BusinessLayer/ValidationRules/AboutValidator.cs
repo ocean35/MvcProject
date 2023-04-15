@@ -13,29 +13,29 @@ namespace MvcProject.BusinessLayer.ValidationRules
         public AboutValidator()
         {
             RuleFor(a => a.AboutDetailsFirst)
-                .NotEmpty().WithMessage("")
-                .NotNull().WithMessage("")
-                .MinimumLength(3).WithMessage("")
-                .MaximumLength(1000).WithMessage("");
+                .NotEmpty().WithMessage("The field can not be empty. Please enter a valid value")
+                .NotNull().WithMessage("The field can not be empty. Please enter a valid value")
+                .MinimumLength(3).WithMessage("The field can not be less than 3 character. Please enter valid value")
+                .MaximumLength(1000).WithMessage("The field can not be more than 50 character. Please enter valid value");
 
             RuleFor(a => a.AboutDetailsSecond)
-               .NotEmpty().WithMessage("")
-               .NotNull().WithMessage("")
-               .MinimumLength(3).WithMessage("")
-               .MaximumLength(1000).WithMessage("");
+               .NotEmpty().WithMessage("The field can not be empty. Please enter a valid value")
+               .NotNull().WithMessage("The field can not be empty. Please enter a valid value")
+               .MinimumLength(3).WithMessage("The field can not be less than 3 character. Please enter valid value")
+               .MaximumLength(1000).WithMessage("The field can not be more than 50 character. Please enter valid value");
 
             RuleFor(a => a.AboutImageFirst)
-                 .NotEmpty().WithMessage("")
-                 .NotNull().WithMessage("")
-                 .MinimumLength(3).WithMessage("")
-                 .MaximumLength(1000).WithMessage("");
+                 .NotEmpty().WithMessage("The field can not be empty. Please enter a valid value")
+                 .NotNull().WithMessage("The field can not be empty. Please enter a valid value")
+                 .MinimumLength(3).WithMessage("The field can not be less than 3 character. Please enter valid value")
+                 .MaximumLength(1000).WithMessage("The field can not be more than 1000 character. Please enter valid value");
 
 
             RuleFor(a => a.AboutDetailsSecond)
-                 .NotEmpty().WithMessage("")
-                 .NotNull().WithMessage("")
-                 .MinimumLength(3).WithMessage("")
-                 .MaximumLength(1000).WithMessage("");
+                 .NotEmpty().WithMessage("The field can not be empty. Please enter a valid value")
+                 .NotNull().WithMessage("The field can not be empty. Please enter a valid value")
+                 .MinimumLength(3).WithMessage("The field can not be less than 3 character. Please enter valid value")
+                 .MaximumLength(1000).WithMessage("The field can not be more than 1000 character. Please enter valid value");
         }
     }
 }

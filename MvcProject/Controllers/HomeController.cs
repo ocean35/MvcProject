@@ -1,5 +1,6 @@
 ﻿using System;
 using System.Collections.Generic;
+using System.Configuration;
 using System.Linq;
 using System.Web;
 using System.Web.Mvc;
@@ -10,6 +11,8 @@ namespace MvcProject.Controllers
     {
         public ActionResult Index()
         {
+            var password = ConfigurationManager.ConnectionStrings["Context"];
+            Console.WriteLine($"Password is {password}");
             return View();
         }
 
