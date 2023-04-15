@@ -11,8 +11,8 @@ namespace MvcProject.Controllers
     {
         public ActionResult Index()
         {
-            var password = ConfigurationManager.ConnectionStrings["Context"];
-            Console.WriteLine($"Password is {password}");
+            //var password = ConfigurationManager.ConnectionStrings["Context"];
+            //Console.WriteLine($"Password is {password}");
             return View();
         }
 
