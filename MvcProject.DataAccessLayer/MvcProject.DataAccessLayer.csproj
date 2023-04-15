@@ -43,5 +43,11 @@
   <ItemGroup>
     <Compile Include="Properties\AssemblyInfo.cs" />
   </ItemGroup>
+  <ItemGroup>
+    <ProjectReference Include="..\MvcProject.EntityLayer\MvcProject.EntityLayer.csproj">
+      <Project>{4ffe3d8b-17c3-486e-8c42-8033ec17fe99}</Project>
+      <Name>MvcProject.EntityLayer</Name>
+    </ProjectReference>
+  </ItemGroup>
   <Import Project="$(MSBuildToolsPath)\Microsoft.CSharp.targets" />
 </Project>
