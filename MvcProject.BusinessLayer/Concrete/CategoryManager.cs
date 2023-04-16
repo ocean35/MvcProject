@@ -19,9 +19,9 @@ namespace MvcProject.BusinessLayer.Concrete
 
         public void CategoryAddBL(Category category)
         {
-            if(category.CategoryName=="" || category.CategoryName.Length <= 3 || category.CategoryDescription=="" || category.CategoryName.Length >= 51)
+            if (category.CategoryName == "" || category.CategoryName.Length <= 3 || category.CategoryDescription == "" || category.CategoryName.Length >= 51)
             {
-                // hata mesajı
+                // Hata mesajı
             }
             else
             {
