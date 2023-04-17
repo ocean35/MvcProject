@@ -1,4 +1,6 @@
-﻿using MvcProject.BusinessLayer.Concrete;
+﻿using FluentValidation.Results;
+using MvcProject.BusinessLayer.Concrete;
+using MvcProject.BusinessLayer.ValidationRules;
 using MvcProject.DataAccessLayer.EntityFramework;
 using MvcProject.EntityLayer.Concrete;
 using System;
@@ -34,7 +36,23 @@ namespace MvcProject.Controllers
         public ActionResult AddCategory(Category c)
         {
             //cm.CategoryAddBL(c);
-            return RedirectToAction("GetCategoryList"); // Ekleme işlemi gerçekleştikten sonra beni GetCategoryList metoduna yönlendir.
+            CategoryValidator categoryValidator = new CategoryValidator();
+            ValidationResult results = categoryValidator.Validate(c);
+
+            if (results.IsValid)
+            {
+                cm.CategoryAddBL(c);
+                return RedirectToAction("GetCategoryList");
+            }
+            else
+            {
+                foreach (var item in results.Errors)
+                {
+                    ModelState.AddModelError(item.PropertyName, item.ErrorMessage);
+                }
+            }
+
+            return View(); // Ekleme işlemi gerçekleştikten sonra beni GetCategoryList metoduna yönlendir.
         }
     }
 }

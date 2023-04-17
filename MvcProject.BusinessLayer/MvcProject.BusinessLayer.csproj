@@ -68,8 +68,6 @@
     <Compile Include="Properties\AssemblyInfo.cs" />
     <Compile Include="ValidationRules\AboutValidator.cs" />
     <Compile Include="ValidationRules\CategoryValidator.cs" />
-    <Compile Include="ValidationRules\ValidatorFactoryAbout.cs" />
-    <Compile Include="ValidationRules\ValidatorFactoryCategory.cs" />
   </ItemGroup>
   <ItemGroup>
     <None Include="App.config" />

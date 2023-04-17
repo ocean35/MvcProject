@@ -1,4 +1,6 @@
-﻿
+﻿@model MvcProject.EntityLayer.Concrete.Category
+
+
 @{
     Layout = null;
 }
@@ -7,10 +9,28 @@
 
 <h1>Add New Category Page</h1>
 <br />
-<form class="form-group" method="post">
+
+@using (Html.BeginForm("AddCategory","Category",FormMethod.Post))
+{
+   <div class="form-group">
+       @Html.Label("Category Name")
+       @Html.TextBoxFor(x => x.CategoryName)
+       @Html.ValidationMessageFor(x=> x.CategoryName)
+       <br /> <br />
+       @Html.Label("Enter a description")
+       @Html.TextBoxFor(x => x.CategoryDescription)
+       @Html.ValidationMessageFor(x=>x.CategoryDescription)
+       <br /> <br />
+       <button class="btn btn-info">Kaydet</button>
+   </div>
+}
+
+
+
+@*<form class="form-group" method="post">
     <input name="CategoryName" type="text" placeholder="Category Name" class="form-control" />
     <br />
     <input name="CategoryDescription" type="text" placeholder="Category Description" class="form-control" />
     <br />
     <button class="btn btn-primary">Add</button>
-</form>
+</form>*@

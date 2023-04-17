@@ -18,16 +18,7 @@ namespace MvcProject
             FilterConfig.RegisterGlobalFilters(GlobalFilters.Filters);
             RouteConfig.RegisterRoutes(RouteTable.Routes);
             BundleConfig.RegisterBundles(BundleTable.Bundles);
-            ValidatorConfiguration();
         }
 
-        private void ValidatorConfiguration()
-        {
-            FluentValidationModelValidatorProvider.Configure(provider =>
-            {
-                provider.ValidatorFactory = new ValidatorFactoryAbout();
-                provider.ValidatorFactory = new ValidatorFactoryCategory();
-            });
-        }
     }
 }
