@@ -6,6 +6,7 @@ using MvcProject.EntityLayer.Concrete;
 using System;
 using System.Collections.Generic;
 using System.Linq;
+using System.Runtime.InteropServices.WindowsRuntime;
 using System.Web;
 using System.Web.Mvc;
 
@@ -15,7 +16,6 @@ namespace MvcProject.Controllers
     {
         CategoryManager cm = new CategoryManager(new EFCategoryDal());
 
-        [HttpGet]
         public ActionResult Index()
         {
             var categoryValues = cm.GetCategoryList();
@@ -47,6 +47,27 @@ namespace MvcProject.Controllers
                 }
             }
             return View();
+        }
+
+        public ActionResult DeleteCategory(int id)
+        {
+            var categoryValue = cm.GetByID(id);
+            cm.CategoryDelete(categoryValue);
+            return RedirectToAction("Index");
+        }
+
+        [HttpGet]
+        public ActionResult EditCategory(int id)
+        {
+            var categoryValue = cm.GetByID(id);
+            return View(categoryValue);
+        }
+
+        [HttpPost]
+        public ActionResult EditCategory(Category category)
+        {
+           cm.CategoryUpdate(category);
+            return RedirectToAction("Index");
         }
     }
 }
