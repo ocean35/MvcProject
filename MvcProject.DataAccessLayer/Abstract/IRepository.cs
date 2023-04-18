@@ -1,6 +1,7 @@
 ﻿using MvcProject.EntityLayer.Concrete;
 using System;
 using System.Collections.Generic;
+using System.Data.Entity.Core.Common.EntitySql;
 using System.Linq;
 using System.Linq.Expressions;
 using System.Text;
@@ -12,6 +13,7 @@ namespace MvcProject.DataAccessLayer.Abstract
     {
         List<T> List();
         void Insert(T category);
+        T Get(Expression<Func<T, bool>> filter);
         void Update(T category);
         void Delete(T category);
 

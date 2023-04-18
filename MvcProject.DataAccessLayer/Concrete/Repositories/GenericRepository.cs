@@ -26,6 +26,11 @@ namespace MvcProject.DataAccessLayer.Concrete.Repositories
             c.SaveChanges();
         }
 
+        public T Get(Expression<Func<T, bool>> filter)
+        {
+            return _object.SingleOrDefault(filter); 
+        }
+
         public void Insert(T t)
         {
             _object.Add(t);

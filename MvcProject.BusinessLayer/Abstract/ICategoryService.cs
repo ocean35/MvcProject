@@ -11,5 +11,6 @@ namespace MvcProject.BusinessLayer.Abstract
     {
         List<Category> GetCategoryList();
         void CategoryAddBL(Category category);
+        Category GetByID(int id);
     }
 }

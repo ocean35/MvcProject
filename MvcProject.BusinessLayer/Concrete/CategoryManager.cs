@@ -24,6 +24,11 @@ namespace MvcProject.BusinessLayer.Concrete
             _categoryDal.Insert(category);
         }
 
+        public Category GetByID(int id)
+        {
+            return _categoryDal.Get(x=> x.ID == id);   
+        }
+
         public List<Category> GetCategoryList()
         {
             return _categoryDal.List();
