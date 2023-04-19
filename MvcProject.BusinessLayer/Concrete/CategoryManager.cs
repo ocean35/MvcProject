@@ -39,8 +39,6 @@ namespace MvcProject.BusinessLayer.Concrete
             return _categoryDal.Get(x=> x.ID == id);   
         }
 
-        
-
         public List<Category> GetCategoryList()
         {
             return _categoryDal.List();
