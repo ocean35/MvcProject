@@ -10,7 +10,7 @@ namespace MvcProject.EntityLayer.Concrete
     public class BaseEntity
     {
         public int ID { get; set; }
-        public DateTime? CreatedDate { get; set; } = DateTime.Now;
-        public DateTime? UpdatedDate { get; set; } = DateTime.Now;
+        public DateTime? CreatedDate { get; set; } 
+        public DateTime? UpdatedDate { get; set; } 
     }
 }

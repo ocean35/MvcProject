@@ -66,7 +66,11 @@ namespace MvcProject.Controllers
         [HttpPost]
         public ActionResult EditCategory(Category category)
         {
-           cm.CategoryUpdate(category);
+            var categoryValue = cm.GetByID(category.ID);
+            categoryValue.CategoryDescription = category.CategoryDescription;
+            categoryValue.CategoryName = category.CategoryName;
+
+            cm.CategoryUpdate(categoryValue);
             return RedirectToAction("Index");
         }
     }
