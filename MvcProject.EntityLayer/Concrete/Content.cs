@@ -9,7 +9,6 @@ namespace MvcProject.EntityLayer.Concrete
 {
     public class Content: BaseEntity
     {
-        [StringLength(1000)]
         public string ContentText { get; set; }
   
 

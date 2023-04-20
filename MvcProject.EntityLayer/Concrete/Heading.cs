@@ -9,7 +9,6 @@ namespace MvcProject.EntityLayer.Concrete
 {
     public class Heading: BaseEntity
     {
-        [StringLength(50)]
         public string HeadingName { get; set; }
 
 
