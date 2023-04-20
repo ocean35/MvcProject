@@ -12,7 +12,7 @@ namespace MvcProject.EntityLayer.Concrete
         public string WriterName { get; set; }
         public string WriterSurname { get; set; }
         public string WriterImage { get; set; }
-
+        public string WriterAbout { get; set; }
         public string WriterEmail { get; set; }
         public string WriterPassword { get; set;}
 

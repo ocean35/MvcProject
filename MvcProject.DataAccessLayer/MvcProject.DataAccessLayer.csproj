@@ -61,6 +61,10 @@
     <Compile Include="Abstract\IWriterDal.cs" />
     <Compile Include="Concrete\Configurations\AboutConfiguration.cs" />
     <Compile Include="Concrete\Configurations\CategoryConfiguration.cs" />
+    <Compile Include="Concrete\Configurations\ContactConfiguration.cs" />
+    <Compile Include="Concrete\Configurations\ContentConfiguration.cs" />
+    <Compile Include="Concrete\Configurations\HeadingConfiguration.cs" />
+    <Compile Include="Concrete\Configurations\WriterConfiguration.cs" />
     <Compile Include="Concrete\Context.cs" />
     <Compile Include="Concrete\Repositories\CategoryRepository.cs" />
     <Compile Include="Concrete\Repositories\GenericRepository.cs" />
@@ -73,6 +77,10 @@
     <Compile Include="Migrations\202304201209236_addeffluentapi.cs" />
     <Compile Include="Migrations\202304201209236_addeffluentapi.designer.cs">
       <DependentUpon>202304201209236_addeffluentapi.cs</DependentUpon>
+    </Compile>
+    <Compile Include="Migrations\202304201226495_AddedWriterAbout_ChangePasswordlength.cs" />
+    <Compile Include="Migrations\202304201226495_AddedWriterAbout_ChangePasswordlength.designer.cs">
+      <DependentUpon>202304201226495_AddedWriterAbout_ChangePasswordlength.cs</DependentUpon>
     </Compile>
     <Compile Include="Migrations\Configuration.cs" />
     <Compile Include="Properties\AssemblyInfo.cs" />
@@ -90,6 +98,9 @@
   <ItemGroup>
     <EmbeddedResource Include="Migrations\202304201209236_addeffluentapi.resx">
       <DependentUpon>202304201209236_addeffluentapi.cs</DependentUpon>
+    </EmbeddedResource>
+    <EmbeddedResource Include="Migrations\202304201226495_AddedWriterAbout_ChangePasswordlength.resx">
+      <DependentUpon>202304201226495_AddedWriterAbout_ChangePasswordlength.cs</DependentUpon>
     </EmbeddedResource>
   </ItemGroup>
   <Import Project="$(MSBuildToolsPath)\Microsoft.CSharp.targets" />

@@ -15,8 +15,9 @@ namespace MvcProject.DataAccessLayer.Concrete.Configurations
             this.Property(x => x.WriterName).HasMaxLength(50);
             this.Property(x => x.WriterSurname).HasMaxLength(50);
             this.Property(x => x.WriterImage).HasMaxLength(100);
-            this.Property(x => x.WriterEmail).HasMaxLength(50);
-            this.Property(x => x.WriterPassword).HasMaxLength(20);
+            this.Property(x => x.WriterAbout).HasMaxLength(100);
+            this.Property(x => x.WriterEmail).HasMaxLength(200);
+            this.Property(x => x.WriterPassword).HasMaxLength(200);
         }
     }
 }
