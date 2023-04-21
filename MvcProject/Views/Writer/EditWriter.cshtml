@@ -1,23 +1,25 @@
 ﻿@model MvcProject.EntityLayer.Concrete.Writer
-
 @{
-    ViewBag.Title = "AddWriter";
+    ViewBag.Title = "EditWriter";
     Layout = "~/Views/Shared/_AdminLayout.cshtml";
 }
 
-<h2>Add New Writer Page</h2>
 <br />
+<h2>Edit Writer Page</h2>
 
-@using(Html.BeginForm("AddWriter", "Writer", FormMethod.Post))
+@using(Html.BeginForm("EditWriter","Writer", FormMethod.Post))
 {
-    <div class="form-group row col-md-6">
+    <div class="form-group">
+        @Html.Label("Writer Id")
+        @Html.TextBoxFor(x => x.ID, new { @class = "form-control" })
+        <br />
         @Html.Label("Writer Name")
         @Html.TextBoxFor(x => x.WriterName, new { @class = "form-control" })
         @Html.ValidationMessageFor(x => x.WriterName)
         <br />
         @Html.Label("Writer Surname")
         @Html.TextBoxFor(x => x.WriterSurname, new { @class = "form-control" })
-        @Html.ValidationMessageFor(x => x.WriterSurname)
+        @Html.ValidationMessageFor(x => x.WriterSurname, null, new { @class = "text-danger" })
         <br />
         @Html.Label("Writer Email")
         @Html.TextBoxFor(x => x.WriterEmail, new { @class = "form-control" })
@@ -39,6 +41,7 @@
         @Html.TextBoxFor(x => x.WriterAbout, new { @class = "form-control" })
         @Html.ValidationMessageFor(x => x.WriterAbout)
         <br />
-        <button class="btn btn-info">Add Writer</button>
+        <button class="btn btn-success">Edit Writer</button>
     </div>
 }
+

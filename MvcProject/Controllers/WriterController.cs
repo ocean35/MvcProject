@@ -13,7 +13,9 @@ namespace MvcProject.Controllers
 {
     public class WriterController : Controller
     {
+        WriterValidator writerValidator = new WriterValidator();
         WriterManager wm = new WriterManager(new EFWriterDal());
+
         public ActionResult Index()
         {
             var writerList = wm.GetWriterList();
@@ -29,7 +31,6 @@ namespace MvcProject.Controllers
         [HttpPost]
         public ActionResult AddWriter(Writer writer)
         {
-            WriterValidator writerValidator = new WriterValidator();
             ValidationResult results = writerValidator.Validate(writer);
 
             if (results.IsValid)
@@ -42,6 +43,42 @@ namespace MvcProject.Controllers
                 foreach (var item in results.Errors)
                 {
                     ModelState.AddModelError(item.PropertyName,item.ErrorMessage);
+                }
+            }
+            return View();
+        }
+
+        [HttpGet]
+        public ActionResult EditWriter(int id)
+        {
+            var writerValue = wm.GetByID(id);
+            return View(writerValue);
+        }
+
+        [HttpPost]
+        public ActionResult EditWriter(Writer writer)
+        {
+            ValidationResult results = writerValidator.Validate(writer);
+            var writerValue = wm.GetByID(writer.ID);
+           
+            if (results.IsValid)
+            {
+                writerValue.WriterName = writer.WriterName;
+                writerValue.WriterSurname = writer.WriterSurname;
+                writerValue.WriterEmail = writer.WriterEmail;
+                writerValue.WriterPassword = writer.WriterPassword;
+                writerValue.WriterImage = writer.WriterImage;
+                writerValue.WriterAbout = writer.WriterAbout;
+                writerValue.WriterTitle= writer.WriterTitle;
+
+                wm.WriterUpdate(writerValue);
+                return RedirectToAction("Index");
+            }
+            else
+            {
+                foreach (var item in results.Errors)
+                {
+                    ModelState.AddModelError(item.PropertyName, item.ErrorMessage);
                 }
             }
             return View();

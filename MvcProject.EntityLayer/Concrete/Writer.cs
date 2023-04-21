@@ -16,6 +16,7 @@ namespace MvcProject.EntityLayer.Concrete
         public string WriterEmail { get; set; }
         public string WriterPassword { get; set;}
 
+        public string WriterTitle { get; set; }
 
         public ICollection<Heading> Headings { get; set; }
         public ICollection<Content> Contents { get; set; }

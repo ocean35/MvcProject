@@ -82,6 +82,10 @@
     <Compile Include="Migrations\202304201226495_AddedWriterAbout_ChangePasswordlength.designer.cs">
       <DependentUpon>202304201226495_AddedWriterAbout_ChangePasswordlength.cs</DependentUpon>
     </Compile>
+    <Compile Include="Migrations\202304202250414_addWriterTitle.cs" />
+    <Compile Include="Migrations\202304202250414_addWriterTitle.designer.cs">
+      <DependentUpon>202304202250414_addWriterTitle.cs</DependentUpon>
+    </Compile>
     <Compile Include="Migrations\Configuration.cs" />
     <Compile Include="Properties\AssemblyInfo.cs" />
   </ItemGroup>
@@ -101,6 +105,9 @@
     </EmbeddedResource>
     <EmbeddedResource Include="Migrations\202304201226495_AddedWriterAbout_ChangePasswordlength.resx">
       <DependentUpon>202304201226495_AddedWriterAbout_ChangePasswordlength.cs</DependentUpon>
+    </EmbeddedResource>
+    <EmbeddedResource Include="Migrations\202304202250414_addWriterTitle.resx">
+      <DependentUpon>202304202250414_addWriterTitle.cs</DependentUpon>
     </EmbeddedResource>
   </ItemGroup>
   <Import Project="$(MSBuildToolsPath)\Microsoft.CSharp.targets" />

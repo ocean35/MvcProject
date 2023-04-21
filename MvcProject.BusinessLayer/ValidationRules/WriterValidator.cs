@@ -28,11 +28,17 @@ namespace MvcProject.BusinessLayer.ValidationRules
               .Must(BeValidWriterAbout).WithMessage("Writer about field must contain 'a' letter.")
               .MinimumLength(3).WithMessage("Writer about can not be less than 3 character. Please enter valid value")
               .MaximumLength(50).WithMessage("Writer about can not be more than 50 character. Please enter valid value");
+
+            RuleFor(x => x.WriterTitle)
+             .NotEmpty().WithMessage("Writer title can not be empty. Please enter a valid text.")
+             .Must(BeValidWriterAbout).WithMessage("Writer title field must contain 'a' letter.")
+             .MinimumLength(3).WithMessage("Writer title can not be less than 3 character. Please enter valid value")
+             .MaximumLength(50).WithMessage("Writer title can not be more than 50 character. Please enter valid value");
         }
 
         private bool BeValidWriterAbout(string about)
         {
-           return about.Contains("a") ? true : false;
+           return about.Contains("a") || about.Contains("A") ? true : false;
         }
     }
 }
