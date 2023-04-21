@@ -19,14 +19,12 @@ namespace MvcProject.BusinessLayer.Concrete
         }
         public Heading GetByID(int id)
         {
-            var heading = _headingDal.Get(x => x.ID == id);
-            return heading;
+            return _headingDal.Get(x => x.ID == id);
         }
 
         public List<Heading> GetHeadingList()
         {
-            var headingList = _headingDal.List();
-            return headingList;
+            return _headingDal.List();
         }
 
         public void HeadingAddBL(Heading heading)
