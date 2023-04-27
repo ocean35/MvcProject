@@ -51,5 +51,6 @@ namespace MvcProject.Controllers
             hm.HeadingAddBL(heading);
             return RedirectToAction("Index");
         }
+
     }
 }
