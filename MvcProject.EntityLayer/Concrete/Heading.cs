@@ -10,6 +10,7 @@ namespace MvcProject.EntityLayer.Concrete
     public class Heading: BaseEntity
     {
         public string HeadingName { get; set; }
+        public bool HeadingStatus { get; set; }
 
 
         public int CategoryID { get; set; }

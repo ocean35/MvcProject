@@ -94,6 +94,14 @@
     <Compile Include="Migrations\202304241133500_AddedWriterStatus.designer.cs">
       <DependentUpon>202304241133500_AddedWriterStatus.cs</DependentUpon>
     </Compile>
+    <Compile Include="Migrations\202304270625410_AddContentEntityContentStatus.cs" />
+    <Compile Include="Migrations\202304270625410_AddContentEntityContentStatus.designer.cs">
+      <DependentUpon>202304270625410_AddContentEntityContentStatus.cs</DependentUpon>
+    </Compile>
+    <Compile Include="Migrations\202304270629452_AddContentEntityHeadingStatus.cs" />
+    <Compile Include="Migrations\202304270629452_AddContentEntityHeadingStatus.designer.cs">
+      <DependentUpon>202304270629452_AddContentEntityHeadingStatus.cs</DependentUpon>
+    </Compile>
     <Compile Include="Migrations\Configuration.cs" />
     <Compile Include="Properties\AssemblyInfo.cs" />
   </ItemGroup>
@@ -122,6 +130,12 @@
     </EmbeddedResource>
     <EmbeddedResource Include="Migrations\202304241133500_AddedWriterStatus.resx">
       <DependentUpon>202304241133500_AddedWriterStatus.cs</DependentUpon>
+    </EmbeddedResource>
+    <EmbeddedResource Include="Migrations\202304270625410_AddContentEntityContentStatus.resx">
+      <DependentUpon>202304270625410_AddContentEntityContentStatus.cs</DependentUpon>
+    </EmbeddedResource>
+    <EmbeddedResource Include="Migrations\202304270629452_AddContentEntityHeadingStatus.resx">
+      <DependentUpon>202304270629452_AddContentEntityHeadingStatus.cs</DependentUpon>
     </EmbeddedResource>
   </ItemGroup>
   <Import Project="$(MSBuildToolsPath)\Microsoft.CSharp.targets" />
