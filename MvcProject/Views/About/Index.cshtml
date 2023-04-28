@@ -26,38 +26,4 @@
     }
 </table>
 
-
-
-
-
-
-<button class="btn btn-primary" data-toggle="modal" data-target="#Modal1">
-    Enter New About Information
-</button>
-
-<div class="modal" id="Modal1">
-    <div class="modal-dialog">
-        <div class="modal-content">
-            <div class="modal-header">
-                <h2 class="modal-title">Enter About Information</h2>
-            </div>
-            <form method="post" action="/About/AddAbout">
-                <div class="modal-body">
-                    <label>About Information First</label>
-                    <input type="text" name="AboutDetailsFirst" class="form-control" />
-                    <br />
-                    <label>About Information Second</label>
-                    <input type="text" name="AboutDetailsSecond" class="form-control" />
-                    <br />
-                    <label>About Image First</label>
-                    <input type="text" name="AboutImageFirst" class="form-control" />
-                    <br />
-                    <label>About Image Second</label>
-                    <input type="text" name="AboutImageSecond" class="form-control" />
-                    <br />
-                    <button class="btn btn-info">Save</button>
-                </div>
-            </form>
-        </div>
-    </div>
-</div>
+@Html.Action("AboutPartialPopUp", "About")

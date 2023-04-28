@@ -32,5 +32,10 @@ namespace MvcProject.Controllers
             abm.AboutAddBL(about);
             return RedirectToAction("Index");
         }
+
+        public PartialViewResult AboutPartialPopUp()
+        {
+            return PartialView();
+        }
     }
 }

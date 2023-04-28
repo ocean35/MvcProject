@@ -2308,6 +2308,7 @@
     <Content Include="Views\Content\ContentByHeading.cshtml" />
     <Content Include="Views\Heading\EditHeading.cshtml" />
     <Content Include="Views\About\Index.cshtml" />
+    <Content Include="Views\About\AboutPartialPopUp.cshtml" />
   </ItemGroup>
   <ItemGroup>
     <Folder Include="App_Data\" />
