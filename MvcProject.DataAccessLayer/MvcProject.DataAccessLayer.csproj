@@ -57,6 +57,7 @@
     <Compile Include="Abstract\IContactDal.cs" />
     <Compile Include="Abstract\IContentDal.cs" />
     <Compile Include="Abstract\IHeadingDal.cs" />
+    <Compile Include="Abstract\IMessageDal.cs" />
     <Compile Include="Abstract\IRepository.cs" />
     <Compile Include="Abstract\IWriterDal.cs" />
     <Compile Include="Concrete\Configurations\AboutConfiguration.cs" />
@@ -64,6 +65,7 @@
     <Compile Include="Concrete\Configurations\ContactConfiguration.cs" />
     <Compile Include="Concrete\Configurations\ContentConfiguration.cs" />
     <Compile Include="Concrete\Configurations\HeadingConfiguration.cs" />
+    <Compile Include="Concrete\Configurations\MessageConfiguration.cs" />
     <Compile Include="Concrete\Configurations\WriterConfiguration.cs" />
     <Compile Include="Concrete\Context.cs" />
     <Compile Include="Concrete\Repositories\CategoryRepository.cs" />
@@ -73,6 +75,7 @@
     <Compile Include="EntityFramework\EFContactDal.cs" />
     <Compile Include="EntityFramework\EFContentDal.cs" />
     <Compile Include="EntityFramework\EFHeadingDal.cs" />
+    <Compile Include="EntityFramework\EFMessageDal.cs" />
     <Compile Include="EntityFramework\EFWriterDal.cs" />
     <Compile Include="Migrations\202304201209236_addeffluentapi.cs" />
     <Compile Include="Migrations\202304201209236_addeffluentapi.designer.cs">
@@ -101,6 +104,10 @@
     <Compile Include="Migrations\202304270629452_AddContentEntityHeadingStatus.cs" />
     <Compile Include="Migrations\202304270629452_AddContentEntityHeadingStatus.designer.cs">
       <DependentUpon>202304270629452_AddContentEntityHeadingStatus.cs</DependentUpon>
+    </Compile>
+    <Compile Include="Migrations\202304281531016_messageTableAdded.cs" />
+    <Compile Include="Migrations\202304281531016_messageTableAdded.designer.cs">
+      <DependentUpon>202304281531016_messageTableAdded.cs</DependentUpon>
     </Compile>
     <Compile Include="Migrations\Configuration.cs" />
     <Compile Include="Properties\AssemblyInfo.cs" />
@@ -136,6 +143,9 @@
     </EmbeddedResource>
     <EmbeddedResource Include="Migrations\202304270629452_AddContentEntityHeadingStatus.resx">
       <DependentUpon>202304270629452_AddContentEntityHeadingStatus.cs</DependentUpon>
+    </EmbeddedResource>
+    <EmbeddedResource Include="Migrations\202304281531016_messageTableAdded.resx">
+      <DependentUpon>202304281531016_messageTableAdded.cs</DependentUpon>
     </EmbeddedResource>
   </ItemGroup>
   <Import Project="$(MSBuildToolsPath)\Microsoft.CSharp.targets" />
