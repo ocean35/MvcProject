@@ -1,10 +1,35 @@
-﻿
+﻿@using MvcProject.EntityLayer.Concrete
+@model List<About>
+
 @{
     ViewBag.Title = "Index";
     Layout = "~/Views/Shared/_AdminLayout.cshtml";
 }
 
-<h2>About Index</h2>
+<h2>About Data List</h2>
+
+<table class="table table-bordered">
+    <tr>
+        <th>ID</th>
+        <th>About Heading</th>
+        <th>Activate</th>
+        <th>Make it Passive</th>
+    </tr>
+    @foreach (var item in Model)
+    {
+        <tr>
+            <td>@item.ID</td>
+            <td>Heading</td>
+            <td><a href="#" class="btn btn-warning">Activate</a></td>
+            <td><a href="#" class="btn btn-danger">Make it passive</a></td>
+        </tr>
+    }
+</table>
+
+
+
+
+
 
 <button class="btn btn-primary" data-toggle="modal" data-target="#Modal1">
     Enter New About Information
@@ -16,19 +41,19 @@
             <div class="modal-header">
                 <h2 class="modal-title">Enter About Information</h2>
             </div>
-            <form method="post" action="#">
+            <form method="post" action="/About/AddAbout">
                 <div class="modal-body">
                     <label>About Information First</label>
-                    <input type="text" name="#" class="form-control" />
+                    <input type="text" name="AboutDetailsFirst" class="form-control" />
                     <br />
                     <label>About Information Second</label>
-                    <input type="text" name="#" class="form-control" />
+                    <input type="text" name="AboutDetailsSecond" class="form-control" />
                     <br />
                     <label>About Image First</label>
-                    <input type="text" name="#" class="form-control" />
+                    <input type="text" name="AboutImageFirst" class="form-control" />
                     <br />
                     <label>About Image Second</label>
-                    <input type="text" name="#" class="form-control" />
+                    <input type="text" name="AboutImageSecond" class="form-control" />
                     <br />
                     <button class="btn btn-info">Save</button>
                 </div>

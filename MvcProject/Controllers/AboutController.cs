@@ -1,5 +1,6 @@
 ﻿using MvcProject.BusinessLayer.Concrete;
 using MvcProject.DataAccessLayer.EntityFramework;
+using MvcProject.EntityLayer.Concrete;
 using System;
 using System.Collections.Generic;
 using System.Linq;
@@ -10,11 +11,26 @@ namespace MvcProject.Controllers
 {
     public class AboutController : Controller
     {
-        AboutManager am = new AboutManager(new EFAboutDal());
+        AboutManager abm = new AboutManager(new EFAboutDal());
+
         // GET: About
         public ActionResult Index()
         {
+            var aboutValues = abm.GetAboutList();
+            return View(aboutValues);
+        }
+
+        [HttpGet]
+        public ActionResult AddAbout()
+        {
             return View();
+        }
+
+        [HttpPost]
+        public ActionResult AddAbout(About about)
+        {
+            abm.AboutAddBL(about);
+            return RedirectToAction("Index");
         }
     }
 }
