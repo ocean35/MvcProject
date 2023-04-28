@@ -12,6 +12,9 @@
 @{
     string colorStatus = "";
 }
+@{
+    string isActive = "";
+}
 
 
 <!DOCTYPE html>
@@ -123,6 +126,17 @@
                                     <span class="@color">@item.Category.CategoryName</span>
                                 </td>
                                 <td class="project-actions text-right">
+                                    @switch (item.HeadingStatus)
+                                    {
+
+                                        case true:
+                                            isActive = "Make it passive";
+                                            break;
+
+                                        case false:
+                                            isActive = "Activate";
+                                            break;
+                                    }
                                     <a class="btn btn-primary btn-sm" href="/Content/ContentByHeading/@item.ID">
                                         <i class="fas fa-folder">
                                         </i>
@@ -136,7 +150,7 @@
                                     <a class="btn btn-danger btn-sm" href="/Heading/DeleteHeading/@item.ID">
                                         <i class="fas fa-trash">
                                         </i>
-                                        Delete
+                                        @isActive
                                     </a>
                                 </td>
                             </tr>
