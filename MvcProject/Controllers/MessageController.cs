@@ -14,7 +14,13 @@ namespace MvcProject.Controllers
         
         public ActionResult Inbox()
         {
-            var messageValue = mm.GetMessageList();
+            var messageValue = mm.GetListInbox();
+            return View(messageValue);
+        }
+
+        public ActionResult Sendbox()
+        {
+            var messageValue = mm.GetListSendbox();
             return View(messageValue);
         }
     }

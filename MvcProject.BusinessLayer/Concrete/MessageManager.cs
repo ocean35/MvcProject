@@ -24,9 +24,14 @@ namespace MvcProject.BusinessLayer.Concrete
             return _messageDal.Get(x=>x.ID== id);
         }
 
-        public List<Message> GetMessageList()
+        public List<Message> GetListInbox()
         {
-            return _messageDal.List(x=>x.ReceiverMail=="admin@gmail.com");
+            return _messageDal.List(x => x.ReceiverMail == "admin@gmail.com");
+        }
+
+        public List<Message> GetListSendbox()
+        {
+            return _messageDal.List(x => x.SenderMail == "admin@gmail.com");
         }
 
         public void MessageAddBL(Message message)

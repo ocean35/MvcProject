@@ -17,6 +17,8 @@ namespace MvcProject.Controllers
         public ActionResult Index()
         {
             var contactValues = cm.GetContactList();
+            string m = cm.GetContactList().Count().ToString();
+            ViewBag.clc = m;
             return View(contactValues);
         }
 
@@ -25,6 +27,13 @@ namespace MvcProject.Controllers
             var contactValues = cm.GetByID(id);
             return View(contactValues);
         }
+
+        //[HttpGet]
+        //public ActionResult ContactListCount()
+        //{
+        //    ViewBag.clc = cm.GetContactList().Count().ToString();
+        //    return View();
+        //}
 
         public PartialViewResult ContactPartialFoldersAndLabels()
         {
