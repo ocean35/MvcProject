@@ -1,4 +1,6 @@
-﻿using MvcProject.BusinessLayer.Concrete;
+﻿using FluentValidation.Results;
+using MvcProject.BusinessLayer.Concrete;
+using MvcProject.BusinessLayer.ValidationRules;
 using MvcProject.DataAccessLayer.EntityFramework;
 using MvcProject.EntityLayer.Concrete;
 using System;
@@ -12,6 +14,7 @@ namespace MvcProject.Controllers
     public class MessageController : Controller
     {
         MessageManager mm = new MessageManager(new EFMessageDal());
+        MessageValidator messageValidator = new MessageValidator();
         
         public ActionResult Inbox()
         {
@@ -46,7 +49,19 @@ namespace MvcProject.Controllers
         [HttpPost]
         public ActionResult NewMessage(Message message)
         {
-            
+            ValidationResult result = messageValidator.Validate(message); 
+            if(result.IsValid)
+            {
+                mm.MessageAddBL(message);
+                return RedirectToAction("Sendbox");
+            }
+            else
+            {
+                foreach (var item in result.Errors)
+                {
+                    ModelState.AddModelError(item.PropertyName, item.ErrorMessage);
+                }
+            }
             return View();
         }
 
